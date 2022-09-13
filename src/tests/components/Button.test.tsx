@@ -125,7 +125,7 @@ describe('Components', () => {
               className='test className'
               handleClick={onClick}
               name='search'
-              type='button'
+              type='submit'
             />
           )
         );
