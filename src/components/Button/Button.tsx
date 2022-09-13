@@ -16,11 +16,11 @@ export default function Button({
   const handleButtonName = () => {
     switch (name) {
     case 'fav':
-      return <AiFillHeart color='#CC3636' />;
+      return <AiFillHeart color='#CC3636' name='fav' />;
     case 'unfav':
-      return <AiOutlineHeart />;
+      return <AiOutlineHeart name='unfav' />;
     case 'search':
-      return <AiOutlineSearch />;
+      return <AiOutlineSearch name='search' />;
     default:
       return name;
     }

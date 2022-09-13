@@ -88,6 +88,7 @@ describe('Components', () => {
       it('should render a unfavorited Icon as a button\'s inner content',
         () => {
           expect(button?.children[0]).not.toHaveAttribute('color');
+          expect(button?.children[0].getAttribute('name')).toBe('unfav');
         });
     });
 
@@ -112,7 +113,31 @@ describe('Components', () => {
       it('should render a unfavorited Icon as a button\'s inner content',
         () => {
           expect(button?.children[0]).toHaveAttribute('color');
+          expect(button?.children[0].getAttribute('name')).toBe('fav');
         });
+    });
+
+    describe('as search IconType button', () => {
+      beforeEach(async () => {
+        act(() =>
+          root?.render(
+            <Button
+              className='test className'
+              handleClick={onClick}
+              name='search'
+              type='button'
+            />
+          )
+        );
+    
+        button = container?.querySelector('button');
+      });
+    
+      afterEach(() => (button = null));
+    
+      it('should render a search Icon as a button\'s inner content', () => {
+        expect(button?.children[0].getAttribute('name')).toBe('search');
+      });
     });
   });
 });
