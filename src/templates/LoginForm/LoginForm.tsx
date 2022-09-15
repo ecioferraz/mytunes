@@ -66,12 +66,6 @@ export default function LoginForm() {
         type='submit'
         disabled={isLoginValid}
       />
-      <Button
-        className='register-btn'
-        name='Cadastre-se'
-        type='button'
-        handleClick={() => navigate('/register')}
-      />
     </form>
   );
 }
