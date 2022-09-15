@@ -1,9 +1,9 @@
 import React, { ChangeEvent, FormEvent, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Button, TextCard, TextInput } from '../../components';
-import { ILoginInfo } from '../../interfaces';
+import { IUserInfo } from '../../interfaces';
 import { readUser, saveUser } from '../../services/localStorage';
-import validateLoginSchema from '../../validations/validateLoginSchema';
+import validateLoginSchema from '../../validations/validateUserSchema';
 
 export default function LoginForm() {
   const navigate = useNavigate();
@@ -11,7 +11,7 @@ export default function LoginForm() {
   const [isLoginValid, setIsLoginValid] = useState<boolean>(
     readUser() ? true : false
   );
-  const [loginInfo, setLoginInfo] = useState<ILoginInfo>({
+  const [loginInfo, setLoginInfo] = useState<IUserInfo>({
     email: '',
     password: '',
   });

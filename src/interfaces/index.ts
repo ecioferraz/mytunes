@@ -1,7 +1,7 @@
 import IAlbum from './IAlbum';
-import ILoginInfo from './ILoginInfo';
+import IUserInfo from './IUserInfo';
 
 export type {
   IAlbum,
-  ILoginInfo,
+  IUserInfo,
 };

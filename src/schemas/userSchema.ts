@@ -1,6 +1,6 @@
 import * as yup from 'yup';
 
-const loginSchema = yup.object().shape({
+const userSchema = yup.object().shape({
   password: yup
     .string()
     .min(6, 'Senha deve ter no mínimo 6 caracteres.')
@@ -10,4 +10,4 @@ const loginSchema = yup.object().shape({
     .email('Formato de e-mail inválido!')
     .required('E-mail obrigatório!'),
 });
-export default loginSchema;
+export default userSchema;
