@@ -2,10 +2,8 @@ import React, { ChangeEvent, FormEvent, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Button, TextCard, TextInput } from '../../components';
 import { ILoginInfo } from '../../interfaces';
-import { loginSchema } from '../../schemas';
 import { readUser, saveUser } from '../../services/localStorage';
-
-const ERROR_START = 17;
+import validateLoginSchema from '../../validations/validateLoginSchema';
 
 export default function LoginForm() {
   const navigate = useNavigate();
@@ -24,18 +22,13 @@ export default function LoginForm() {
     setLoginInfo({ ...loginInfo, [name]: value });
   };
 
-  const validateSchema = async () =>
-    loginSchema
-      .validate(loginInfo)
-      .catch((error) => setError(error.toString().substring(ERROR_START)));
-
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setError('');
 
-    if (await validateSchema()) {
-      setIsLoginValid(true);
+    if (await validateLoginSchema(loginInfo, setError)) {
       saveUser(loginInfo);
+      setIsLoginValid(true);
     }
   };
 
