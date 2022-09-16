@@ -1,9 +1,11 @@
 import React, { FormEvent, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { TextCard } from '../../components';
 import { IAlbum } from '../../interfaces';
 import { getAlbums } from '../../services/APIRequests';
 import { readUser } from '../../services/localStorage';
 import { SearchForm } from '../../templates';
+import AlbumCard from '../../templates/AlbumCard/AlbumCard';
 
 export default function Search() {
   const navigate = useNavigate();
@@ -13,7 +15,6 @@ export default function Search() {
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-
     setIsLoading(true);
     const albums = await getAlbums(search);
     setDiscography(albums);
@@ -31,6 +32,21 @@ export default function Search() {
         search={search}
         setSearch={setSearch}
       />
+      {isLoading ? (
+        <TextCard className='loading' text='Carregando...' />
+      ) : (
+        discography.map(
+          ({ artistName, artworkUrl100, collectionId, collectionName }) => (
+            <AlbumCard
+              key={collectionId}
+              artistName={artistName}
+              artworkUrl100={artworkUrl100}
+              collectionId={collectionId}
+              collectionName={collectionName}
+            />
+          )
+        )
+      )}
     </main>
   );
 }
