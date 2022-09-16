@@ -1,6 +1,6 @@
 import React from 'react';
 import { Navigate, Route, Routes } from 'react-router-dom';
-import { Login } from '../pages';
+import { Login, Search } from '../pages';
 import { readUser } from '../services/localStorage';
 
 export default function Router() {
@@ -13,6 +13,7 @@ export default function Router() {
         }
       />
       <Route path='/login' element={<Login />} />
+      <Route path='/search' element={<Search />} />
     </Routes>
   );
 }
