@@ -6,17 +6,16 @@ const baseURL = 'https://itunes.apple.com/';
 const api = axios.create({ baseURL });
 
 export const getAlbums = async (artist: string) => {
-  const { data } = await api.get(
+  const { data: { results } } = await api.get(
     `search?entity=album&term=${artist}&attribute=allArtistTerm`
   );
 
-  return data.map(
+  return results.map(
     ({
       artistId,
       artistName,
       collectionId,
       collectionName,
-      collectionPrice,
       artworkUrl100,
       releaseDate,
       trackCount,
@@ -25,7 +24,6 @@ export const getAlbums = async (artist: string) => {
       artistName,
       collectionId,
       collectionName,
-      collectionPrice,
       artworkUrl100,
       releaseDate,
       trackCount,
