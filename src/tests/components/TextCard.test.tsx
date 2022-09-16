@@ -38,11 +38,11 @@ describe('Components', () => {
         textCard = null;
       });
 
-      it('should render a div', () => {
+      it('should render a heading h1', () => {
         expect(textCard).toBeTruthy();
       });
 
-      it('should render a h1 element inside of the div', () => {
+      it('should render h1\'s properties correctly', () => {
         expect(textCard?.className).toBe('test className');
         expect(textCard?.tagName).toBe('H1');
         expect(textCard?.textContent).toBe('test text');
@@ -68,11 +68,11 @@ describe('Components', () => {
         textCard = null;
       });
 
-      it('should render a div', () => {
+      it('should render a paragraph', () => {
         expect(textCard).toBeTruthy();
       });
 
-      it('should render a paragraph element inside of the div', () => {
+      it('should render paragraph\'s properties correctly', () => {
         expect(textCard?.className).toBe('test className');
         expect(textCard?.tagName).toBe('P');
         expect(textCard?.textContent).toBe('test text');
@@ -97,11 +97,11 @@ describe('Components', () => {
         textCard = null;
       });
 
-      it('should render a div', () => {
+      it('should render a span', () => {
         expect(textCard).toBeTruthy();
       });
 
-      it('should render a span element inside of the div', () => {
+      it('should render a span\'s properties correctly', () => {
         expect(textCard?.className).toBe('test className');
         expect(textCard?.tagName).toBe('SPAN');
         expect(textCard?.textContent).toBe('test text');
