@@ -1,10 +1,7 @@
-interface IAlbum {
+import { IAlbumCard } from '../templates/AlbumCard';
+
+interface IAlbum extends IAlbumCard {
   artistId: number;
-  artistName: string;
-  collectionId: number;
-  collectionName: string;
-  collectionPrice: number;
-  artworkUrl100: string;
   releaseDate: string;
   trackCount: number;
 }
