@@ -41,7 +41,7 @@ export default function LoginForm() {
       <TextCard as='h1' className='login-title' text='myTunes' />
       <fieldset>
         <legend>Login</legend>
-        <TextCard as='p' className='error-message' text={error} />
+        {error && <TextCard as='p' className='error-message' text={error} />}
         <TextInput
           className='email-input'
           handleChange={handleChange}
