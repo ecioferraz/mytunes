@@ -31,5 +31,11 @@ export const getAlbums = async (artist: string) => {
   );
 };
 
-export const getMusics = async (id: string) =>
-  api.get(`lookup?id=${id}&entity=song`);
+export const getMusics = async (id: string) => {
+  try {
+    const { data: { results } } = await api.get(`lookup?id=${id}&entity=song`);
+    return results;
+  } catch (error) {
+    return error;
+  }
+};
