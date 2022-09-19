@@ -15,35 +15,33 @@ describe('Components', () => {
 
   afterEach(() => act(() => root?.unmount()));
 
-  describe('<TextCard />', () => {
+  describe('<AudioCard />', () => {
     let audioCard: HTMLAudioElement | null | undefined;
 
-    describe('as heading element', () => {
-      beforeEach(() => {
-        act(() => {
-          root?.render(
-            <AudioCard
-              previewUrl='test previewUrl'
-            />
-          );
-        });
-
-        audioCard = container?.querySelector('audio');
+    beforeEach(() => {
+      act(() => {
+        root?.render(
+          <AudioCard
+            previewUrl='test previewUrl'
+          />
+        );
       });
 
-      afterEach(() => {
-        audioCard = null;
-      });
+      audioCard = container?.querySelector('audio');
+    });
 
-      it('should render a div', () => {
-        expect(audioCard).toBeTruthy();
-      });
+    afterEach(() => {
+      audioCard = null;
+    });
 
-      it('should render audioCard\'s properties correctly', () => {
-        expect(audioCard?.className).toBe('audio-player');
-        expect(audioCard).toHaveAttribute('controls');
-        expect(audioCard?.getAttribute('src')).toBe('test previewUrl');
-      });
+    it('should render a audio element', () => {
+      expect(audioCard).toBeTruthy();
+    });
+
+    it('should render audioCard\'s properties correctly', () => {
+      expect(audioCard?.className).toBe('audio-player');
+      expect(audioCard).toHaveAttribute('controls');
+      expect(audioCard?.getAttribute('src')).toBe('test previewUrl');
     });
   });
 });

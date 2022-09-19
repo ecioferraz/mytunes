@@ -15,42 +15,40 @@ describe('Components', () => {
 
   afterEach(() => act(() => root?.unmount()));
 
-  describe('<TextCard />', () => {
+  describe('<ImageCard />', () => {
     let imageCard: HTMLDivElement | null | undefined;
 
-    describe('as heading element', () => {
-      beforeEach(() => {
-        act(() => {
-          root?.render(
-            <ImageCard
-              alt='test alt'
-              className='test className'
-              imageURL='test imageURL'
-            />
-          );
-        });
-
-        imageCard = container?.querySelector('div');
-      });
-
-      afterEach(() => {
-        imageCard = null;
-      });
-
-      it('should render a div', () => {
-        expect(imageCard).toBeTruthy();
-      });
-
-      it('should render ImageCard\'s properties correctly', () => {
-        expect(imageCard?.className).toBe('image-card');
-        expect(imageCard?.tagName).toBe('DIV');
-        expect(imageCard?.children[0].tagName).toBe('IMG');
-        expect(imageCard?.children[0].className).toBe('test className');
-        expect(imageCard?.children[0].getAttribute('alt')).toBe('test alt');
-        expect(imageCard?.children[0].getAttribute('src')).toBe(
-          'test imageURL'
+    beforeEach(() => {
+      act(() => {
+        root?.render(
+          <ImageCard
+            alt='test alt'
+            className='test className'
+            imageURL='test imageURL'
+          />
         );
       });
+
+      imageCard = container?.querySelector('div');
+    });
+
+    afterEach(() => {
+      imageCard = null;
+    });
+
+    it('should render a div', () => {
+      expect(imageCard).toBeTruthy();
+    });
+
+    it('should render ImageCard\'s properties correctly', () => {
+      expect(imageCard?.className).toBe('image-card');
+      expect(imageCard?.tagName).toBe('DIV');
+      expect(imageCard?.children[0].tagName).toBe('IMG');
+      expect(imageCard?.children[0].className).toBe('test className');
+      expect(imageCard?.children[0].getAttribute('alt')).toBe('test alt');
+      expect(imageCard?.children[0].getAttribute('src')).toBe(
+        'test imageURL'
+      );
     });
   });
 });
