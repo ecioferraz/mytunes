@@ -4,8 +4,7 @@ import { TextCard } from '../../components';
 import { IAlbum } from '../../interfaces';
 import { getAlbums } from '../../services/APIRequests';
 import { readUser } from '../../services/localStorage';
-import { SearchForm } from '../../templates';
-import AlbumCard from '../../templates/AlbumCard/AlbumCard';
+import { AlbumCard, SearchForm } from '../../templates';
 
 export default function Search() {
   const navigate = useNavigate();
