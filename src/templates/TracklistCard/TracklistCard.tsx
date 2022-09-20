@@ -57,12 +57,10 @@ export default function TracklistCard() {
             />
           </section>
           <section>
-            {tracklist.map(({ previewUrl, trackId, trackName }) => (
+            {tracklist.map((song) => (
               <SongCard
-                key={trackId}
-                previewUrl={previewUrl}
-                trackId={trackId}
-                trackName={trackName}
+                key={song.trackId}
+                song={song}
               />
             ))}
           </section>
