@@ -29,23 +29,23 @@ describe('Components', () => {
               handleChange={onChange}
               name='test name'
               placeholder='test placeholder'
-              type="text"
+              type='text'
               value='test value'
             />
           );
         });
-  
+
         textInput = container?.querySelector('input');
       });
-  
+
       afterEach(() => {
         textInput = null;
       });
-  
+
       it('should render a text input', () => {
         expect(textInput).toBeTruthy();
       });
-  
+
       it('should render the text input props correctly', () => {
         expect(textInput?.getAttribute('class')).toBe('test className');
         expect(textInput?.getAttribute('id')).toBe('test name');
@@ -54,13 +54,13 @@ describe('Components', () => {
         expect(textInput?.getAttribute('type')).toBe('text');
         expect(textInput?.value).toBe('test value');
       });
-  
+
       it('should render the text input label correctly', () => {
         const label = container?.querySelector('label');
         expect(label?.textContent).toBe('');
         expect(label?.getAttribute('for')).toBe('test name');
       });
-  
+
       it('should respond to change correctly', () => {
         act(() => {
           Simulate.change(textInput as HTMLInputElement);

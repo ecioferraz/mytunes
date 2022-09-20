@@ -58,10 +58,7 @@ export default function TracklistCard() {
           </section>
           <section>
             {tracklist.map((song) => (
-              <SongCard
-                key={song.trackId}
-                song={song}
-              />
+              <SongCard key={song.trackId} song={song} />
             ))}
           </section>
         </div>

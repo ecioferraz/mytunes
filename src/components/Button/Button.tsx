@@ -1,10 +1,6 @@
 import React from 'react';
 import IButton from './IButton';
-import {
-  AiFillHeart,
-  AiOutlineHeart,
-  AiOutlineSearch,
-} from 'react-icons/ai';
+import { AiFillHeart, AiOutlineHeart, AiOutlineSearch } from 'react-icons/ai';
 
 export default function Button({
   className,
@@ -25,7 +21,7 @@ export default function Button({
       return name;
     }
   };
-  
+
   return (
     <button
       className={className}

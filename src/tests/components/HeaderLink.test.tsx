@@ -7,26 +7,23 @@ import { HeaderLink } from '../../components';
 describe('Components', () => {
   let container: HTMLDivElement | null = null;
   let root: Root | null = null;
-  
+
   beforeAll(() => {
     container = document.createElement('div');
     document.body.appendChild(container);
     root = createRoot(container);
   });
-  
+
   afterAll(() => act(() => root?.unmount()));
-  
+
   describe('<RedirectLink />', () => {
     let headerLink: HTMLLinkElement | null | undefined;
-    
+
     beforeEach(() => {
       act(() => {
         root?.render(
           <BrowserRouter>
-            <HeaderLink
-              className='test className'
-              name='test name'
-            />
+            <HeaderLink className='test className' name='test name' />
           </BrowserRouter>
         );
       });

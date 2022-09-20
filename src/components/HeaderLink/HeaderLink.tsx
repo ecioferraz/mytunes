@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import IHeaderLink from './IHeaderLink';
 
-export default function HeaderLink ({
+export default function HeaderLink({
   className,
   name,
   path = '',

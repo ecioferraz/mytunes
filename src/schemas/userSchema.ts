@@ -10,4 +10,5 @@ const userSchema = yup.object().shape({
     .email('Formato de e-mail inválido!')
     .required('E-mail obrigatório!'),
 });
+
 export default userSchema;

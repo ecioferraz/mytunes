@@ -18,16 +18,8 @@ export default function AlbumCard({
           imageURL={artworkUrl100}
         />
         <div>
-          <TextCard
-            as='h1'
-            className='album-title'
-            text={collectionName}
-          />
-          <TextCard
-            as='h2'
-            className='artist-name'
-            text={artistName}
-          />
+          <TextCard as='h1' className='album-title' text={collectionName} />
+          <TextCard as='h2' className='artist-name' text={artistName} />
         </div>
       </Link>
     </div>

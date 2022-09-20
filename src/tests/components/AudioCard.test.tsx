@@ -20,11 +20,7 @@ describe('Components', () => {
 
     beforeEach(() => {
       act(() => {
-        root?.render(
-          <AudioCard
-            previewUrl='test previewUrl'
-          />
-        );
+        root?.render(<AudioCard previewUrl='test previewUrl' />);
       });
 
       audioCard = container?.querySelector('audio');

@@ -46,9 +46,7 @@ describe('Components', () => {
       expect(imageCard?.children[0].tagName).toBe('IMG');
       expect(imageCard?.children[0].className).toBe('test className');
       expect(imageCard?.children[0].getAttribute('alt')).toBe('test alt');
-      expect(imageCard?.children[0].getAttribute('src')).toBe(
-        'test imageURL'
-      );
+      expect(imageCard?.children[0].getAttribute('src')).toBe('test imageURL');
     });
   });
 });
