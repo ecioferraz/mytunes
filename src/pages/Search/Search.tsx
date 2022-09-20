@@ -21,7 +21,7 @@ export default function Search() {
   };
 
   useEffect(() => {
-    if (!readUser()) navigate('/search');
+    if (!readUser()) navigate('/login');
   }, []);
 
   return (
