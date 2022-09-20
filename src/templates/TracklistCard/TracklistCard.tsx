@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { ImageCard, TextCard } from '../../components';
-import { AudioCard } from '../../components';
 import { IAlbum, ITracklist } from '../../interfaces';
 import { getMusics } from '../../services/APIRequests';
+import SongCard from '../SongCard';
 
 export default function TracklistCard() {
   const { id } = useParams();
@@ -58,10 +58,12 @@ export default function TracklistCard() {
           </section>
           <section>
             {tracklist.map(({ previewUrl, trackId, trackName }) => (
-              <div key={trackId}>
-                <TextCard as='p' className='song-title' text={trackName} />
-                <AudioCard previewUrl={previewUrl} />
-              </div>
+              <SongCard
+                key={trackId}
+                previewUrl={previewUrl}
+                trackId={trackId}
+                trackName={trackName}
+              />
             ))}
           </section>
         </div>
