@@ -22,6 +22,11 @@ const readFavoriteSongs = () =>
 const saveFavoriteSongs = (favoriteSongs: ITracklist[]) =>
   localStorage.setItem(FAVORITE_SONGS_KEY, JSON.stringify(favoriteSongs));
 
+const addFavoriteSong = (favoriteSong: ITracklist) => {
+  const favoriteSongs = readFavoriteSongs();
+  saveFavoriteSongs([...favoriteSongs, favoriteSong]);
+};
+
 const removeFavoriteSong = (favoriteSong: ITracklist) => {
   const favoriteSongs = readFavoriteSongs();
   saveFavoriteSongs(
@@ -32,9 +37,9 @@ const removeFavoriteSong = (favoriteSong: ITracklist) => {
 };
 
 export {
+  addFavoriteSong,
   readFavoriteSongs,
   removeFavoriteSong,
-  saveFavoriteSongs,
   readUser,
   removeUser,
   saveUser,
