@@ -32,7 +32,7 @@ export default function TracklistCard() {
   }, []);
 
   return (
-    <main>
+    <>
       {isLoading || error ? (
         <TextCard
           as='p'
@@ -63,6 +63,6 @@ export default function TracklistCard() {
           </section>
         </div>
       )}
-    </main>
+    </>
   );
 }
