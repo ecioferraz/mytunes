@@ -1,22 +1,21 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { AudioCard, Button, TextCard } from '../../components';
+import FavoritesContext, { FavoritesContextType } from '../../context';
 import { ITracklist } from '../../interfaces';
-import {
-  addFavoriteSong,
-  readFavoriteSongs,
-  removeFavoriteSong,
-} from '../../services/localStorage';
 import ISongCard from './ISongCard';
 
 export default function SongCard({ song }: ISongCard) {
+  const { favorites, removeFavorite, saveFavorite } = useContext(
+    FavoritesContext
+  ) as FavoritesContextType;
   const [isFavorite, setIsFavorite] = useState(
-    readFavoriteSongs().some((s: ITracklist) => s.trackId === song.trackId)
+    favorites.some((s: ITracklist) => s.trackId === song.trackId)
   );
 
   const { previewUrl, trackId, trackName } = song;
 
   const handleFav = () => {
-    isFavorite ? removeFavoriteSong(song) : addFavoriteSong(song);
+    isFavorite ? removeFavorite(song) : saveFavorite(song);
     setIsFavorite(!isFavorite);
   };
 
