@@ -12,7 +12,7 @@ export default function Button({
   const handleButtonName = () => {
     switch (name) {
     case 'fav':
-      return <AiFillHeart color='#CC3636' name='fav' />;
+      return <AiFillHeart color='#EB5353' name='fav' />;
     case 'unfav':
       return <AiOutlineHeart name='unfav' />;
     case 'search':
