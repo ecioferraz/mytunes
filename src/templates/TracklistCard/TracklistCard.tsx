@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import { ImageCard, TextCard } from '../../components';
 import { IAlbum, ITracklist } from '../../interfaces';
 import { getMusics } from '../../services/APIRequests';
+import shortenName from '../../utils/shortenName';
 import SongCard from '../SongCard';
 
 export default function TracklistCard() {
@@ -48,12 +49,14 @@ export default function TracklistCard() {
               imageURL={albumInfo?.artworkUrl100 as string}
             />
             <TextCard
+              as='p'
               className='album-title'
-              text={albumInfo?.collectionName as string}
+              text={shortenName(albumInfo?.collectionName as string)}
             />
             <TextCard
+              as='p'
               className='artist-name'
-              text={albumInfo?.artistName as string}
+              text={shortenName(albumInfo?.artistName as string)}
             />
           </section>
           <section>

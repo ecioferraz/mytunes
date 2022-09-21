@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { ImageCard, TextCard } from '../../components';
+import shortenName from '../../utils/shortenName';
 import { IAlbumCard } from './';
 
 export default function AlbumCard({
@@ -18,8 +19,16 @@ export default function AlbumCard({
           imageURL={artworkUrl100}
         />
         <div>
-          <TextCard as='h1' className='album-title' text={collectionName} />
-          <TextCard as='h2' className='artist-name' text={artistName} />
+          <TextCard
+            as='h1'
+            className='album-title'
+            text={shortenName(collectionName)}
+          />
+          <TextCard
+            as='h2'
+            className='artist-name'
+            text={shortenName(artistName)}
+          />
         </div>
       </Link>
     </div>
