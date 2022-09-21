@@ -32,6 +32,7 @@ export default function FavoritesProvider({ children }: PropsWithChildren) {
     setIsLoading(true);
     removeFavoriteSong(song);
     setFavorites(favorites.filter((fav) => fav.trackId !== song.trackId));
+    setIsLoading(false);
   };
 
   const context = {
