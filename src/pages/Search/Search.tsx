@@ -4,6 +4,8 @@ import { IAlbum } from '../../interfaces';
 import { getAlbums } from '../../services/APIRequests';
 import { AlbumCard, SearchForm } from '../../templates';
 
+import './styles.css';
+
 export default function Search() {
   const [discography, setDiscography] = useState<IAlbum[]>([]);
   const [isLoading, setIsLoading] = useState(false);
@@ -27,17 +29,22 @@ export default function Search() {
       {isLoading ? (
         <TextCard className='loading' text='Carregando...' />
       ) : (
-        discography.map(
-          ({ artistName, artworkUrl100, collectionId, collectionName }) => (
-            <AlbumCard
-              key={collectionId}
-              artistName={artistName}
-              artworkUrl100={artworkUrl100}
-              collectionId={collectionId}
-              collectionName={collectionName}
-            />
-          )
-        )
+        <div className='album-library'>
+          {/* <TextCard className='' text={`Resultado de busca por: ${search}`}/> */}
+          <div className='album-cards'>
+            {discography.map(
+              ({ artistName, artworkUrl100, collectionId, collectionName }) => (
+                <AlbumCard
+                  key={collectionId}
+                  artistName={artistName}
+                  artworkUrl100={artworkUrl100}
+                  collectionId={collectionId}
+                  collectionName={collectionName}
+                />
+              )
+            )}
+          </div>
+        </div>
       )}
     </main>
   );

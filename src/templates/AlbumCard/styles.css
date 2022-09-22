@@ -1,0 +1,54 @@
+.album-card {
+  align-items: center;
+  background-color: rgb(255, 255, 255, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  border-radius: 8px;
+  color: #000;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  height: 200px;
+  justify-content: center;
+  margin: 5px;
+  overflow: hidden;
+  transition: all .2s ease-in-out;
+  text-decoration: none;
+  width: 200px;
+}
+
+.album-card:hover {
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  scale: 1.1;
+}
+
+.album-card :is( h1, h2 ) {
+  margin: 0.5em 0;
+}
+
+.album-card h1 {
+  font-size: 1em;
+}
+
+.album-card h2 {
+  font-size: .8em;
+}
+
+.album-image {
+  height: 100px;
+  width: 100px;
+}
+
+@media screen and (max-width: 1280px) {
+  .album-card {
+    height: 165px;
+    width: 165px;
+  }
+
+  .album-card h1 {
+    font-size: .8em;
+  }
+  
+  .album-card h2 {
+    font-size: .6em;
+  }
+}

@@ -29,7 +29,7 @@
   color: #5cbdbb;
 }
 
-.search-form .search-input:focus,
+.search-input:focus,
 .search-form:hover .search-input {
   width: 250px;
 }
