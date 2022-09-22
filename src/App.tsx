@@ -7,12 +7,12 @@ import FavoritesProvider from './provider/FavoritesProvider';
 
 function App() {
   return (
-    <FavoritesProvider>
-      <BrowserRouter>
+    <BrowserRouter>
+      <FavoritesProvider>
         <Header />
         <Router />
-      </BrowserRouter>
-    </FavoritesProvider>
+      </FavoritesProvider>
+    </BrowserRouter>
   );
 }
 

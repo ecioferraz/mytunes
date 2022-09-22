@@ -1,13 +1,10 @@
-import React, { FormEvent, useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import React, { FormEvent, useState } from 'react';
 import { TextCard } from '../../components';
 import { IAlbum } from '../../interfaces';
 import { getAlbums } from '../../services/APIRequests';
-import { readUser } from '../../services/localStorage';
 import { AlbumCard, SearchForm } from '../../templates';
 
 export default function Search() {
-  const navigate = useNavigate();
   const [discography, setDiscography] = useState<IAlbum[]>([]);
   const [isLoading, setIsLoading] = useState(false);
   const [search, setSearch] = useState('');
@@ -19,10 +16,6 @@ export default function Search() {
     setDiscography(albums);
     setIsLoading(false);
   };
-
-  useEffect(() => {
-    if (!readUser()) navigate('/login');
-  }, []);
 
   return (
     <main>

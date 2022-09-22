@@ -1,15 +1,22 @@
 import React, { PropsWithChildren, useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import FavoritesContext from '../context/FavoritesContext';
 import { ITracklist } from '../interfaces';
 import {
   addFavoriteSong,
   readFavoriteSongs,
+  readUser,
   removeFavoriteSong,
 } from '../services/localStorage';
 
 export default function FavoritesProvider({ children }: PropsWithChildren) {
+  const navigate = useNavigate();
   const [favorites, setFavorites] = useState<ITracklist[]>([]);
   const [isLoading, setIsLoading] = useState(false);
+
+  useEffect(() => {
+    if (!readUser()) navigate('/login');
+  }, []);
 
   useEffect(() => {
     const getFavorites = () => {
