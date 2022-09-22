@@ -16,7 +16,7 @@ export default function Button({
     case 'unfav':
       return <AiOutlineHeart name='unfav' />;
     case 'search':
-      return <AiOutlineSearch name='search' />;
+      return <AiOutlineSearch name='search' className='ai' />;
     default:
       return name;
     }

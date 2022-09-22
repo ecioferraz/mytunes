@@ -2,13 +2,15 @@ import React from 'react';
 import { Button, TextInput } from '../../components';
 import ISearchForm from './ISearchForm';
 
+import './styles.css';
+
 export default function SearchForm({
   handleSubmit,
   search,
   setSearch,
 }: ISearchForm) {
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className='search-form'>
       <TextInput
         className='search-input'
         handleChange={({ target: { value } }) => setSearch(value)}
@@ -19,7 +21,7 @@ export default function SearchForm({
       />
       <Button
         className='search-btn'
-        name='Pesquisar'
+        name='search'
         type='submit'
         disabled={!search}
       />
