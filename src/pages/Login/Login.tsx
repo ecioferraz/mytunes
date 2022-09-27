@@ -12,7 +12,6 @@ export default function Login() {
       </main>
       <Footer
         author='wayhomestudio'
-        className='image-credit'
         href='https://www.freepik.com/photos/people'
         tag='People'
       />

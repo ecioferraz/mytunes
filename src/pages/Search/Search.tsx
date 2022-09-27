@@ -62,7 +62,6 @@ export default function Search() {
       </main>
       <Footer
         author='lookstudio'
-        className='image-credit'
         href='https://www.freepik.com/photos/music'
         tag='Music'
       />

@@ -12,7 +12,6 @@ export default function Favorites() {
       </main>
       <Footer
         author="Vecteezy"
-        className="image-credit"
         href="https://www.vecteezy.com/free-photos"
         tag="Free Stock"
       />

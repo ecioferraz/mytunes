@@ -12,7 +12,6 @@ export default function Album() {
       </main>
       <Footer
         author="prostooleh"
-        className="image-credit left"
         href="https://www.freepik.com/photos/music"
         tag="Music"
       />
