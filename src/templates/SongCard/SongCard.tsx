@@ -31,13 +31,15 @@ export default function SongCard({ song }: ISongCard) {
   return (
     <div key={trackId}>
       <TextCard as='p' className='song-title' text={handleText()} />
-      <AudioCard previewUrl={previewUrl} />
-      <Button
-        className='fav-btn'
-        handleClick={handleFav}
-        name={isFavorite ? 'fav' : 'unfav'}
-        type='button'
-      />
+      <section className='audio-container'>
+        <AudioCard previewUrl={previewUrl} />
+        <Button
+          className='fav-btn'
+          handleClick={handleFav}
+          name={isFavorite ? 'fav' : 'unfav'}
+          type='button'
+        />
+      </section>
     </div>
   );
 }

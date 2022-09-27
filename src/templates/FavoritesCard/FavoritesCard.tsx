@@ -3,14 +3,16 @@ import { TextCard } from '../../components';
 import FavoritesContext, { FavoritesContextType } from '../../context';
 import SongCard from '../SongCard';
 
+import './styles.css';
+
 export default function FavoritesCard() {
   const { favorites } = useContext(FavoritesContext) as FavoritesContextType;
 
   return (
-    <div>
+    <div className='favorites-card'>
       <TextCard as='h1' className='favorites-title' text='Favoritas' />
       <section>
-        {!favorites ? (
+        {!favorites.length ? (
           <TextCard
             as='p'
             className='no-favorites'

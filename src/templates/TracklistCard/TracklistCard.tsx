@@ -6,18 +6,30 @@ import { getMusics } from '../../services/APIRequests';
 import shortenName from '../../utils/shortenName';
 import SongCard from '../SongCard';
 
+import './styles.css';
+
+const ALBUM_INFO_INITIAL_STATE = {
+  artistName: '',
+  artworkUrl100: '',
+  collectionId: 0,
+  collectionName: '',
+  artistId: 0,
+  releaseDate: '',
+  trackCount: 0,
+};
+
 export default function TracklistCard() {
   const { id } = useParams();
   const [error, setError] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
-  const [albumInfo, setAlbumInfo] = useState<IAlbum>();
+  const [albumInfo, setAlbumInfo] = useState<IAlbum>(ALBUM_INFO_INITIAL_STATE);
   const [tracklist, setTracklist] = useState<ITracklist[]>([]);
 
   useEffect(() => {
     const getAlbum = async () => {
       setIsLoading(true);
       const album = await getMusics(id as string);
-
+      console.log(album);
       if (album.message) {
         setError(true);
       } else {
@@ -41,7 +53,7 @@ export default function TracklistCard() {
           text={isLoading ? 'Carregando...' : 'Oops! Algo deu errado.'}
         />
       ) : (
-        <div>
+        <div className='tracklist'>
           <section className='album-info'>
             <ImageCard
               alt={`Capa do álbum ${albumInfo?.collectionName}`}

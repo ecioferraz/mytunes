@@ -5,6 +5,8 @@ import { IUserInfo } from '../../interfaces';
 import { readUser, saveUser } from '../../services/localStorage';
 import validateLoginSchema from '../../validations/validateUserSchema';
 
+import './styles.css';
+
 export default function LoginForm() {
   const navigate = useNavigate();
   const [error, setError] = useState('');
@@ -37,11 +39,10 @@ export default function LoginForm() {
   }, [isLoginValid]);
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form className='login-form' onSubmit={handleSubmit}>
       <TextCard as='h1' className='login-title' text='myTunes' />
-      <fieldset>
-        <legend>Login</legend>
-        {error && <TextCard as='p' className='error-message' text={error} />}
+      {error && <TextCard as='p' className='error-message' text={error} />}
+      <div className='input-container'>
         <TextInput
           className='email-input'
           handleChange={handleChange}
@@ -54,17 +55,17 @@ export default function LoginForm() {
           className='password-input'
           handleChange={handleChange}
           name='password'
-          placeholder='Password'
+          placeholder='Senha'
           type='password'
           value={loginInfo.password}
           minLength='6'
         />
-      </fieldset>
+      </div>
       <Button
         className='login-btn'
-        name='Login'
+        name='Entrar'
         type='submit'
-        disabled={isLoginValid}
+        disabled={!loginInfo.email || !loginInfo.password}
       />
     </form>
   );

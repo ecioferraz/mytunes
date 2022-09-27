@@ -1,4 +1,4 @@
-const MAX_LENGTH = 25;
+const MAX_LENGTH = 30;
 
 const shortenName = (name: string) => {
   return name.length < MAX_LENGTH

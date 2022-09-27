@@ -9,7 +9,7 @@ export default function Router() {
       <Route
         path='/'
         element={
-          readUser() ? <Navigate to={'/search'} /> : <Navigate to={'/login'} />
+          !readUser() ? <Navigate to={'/login'} /> : <Navigate to={'/search'} />
         }
       />
       <Route path='/login' element={<Login />} />

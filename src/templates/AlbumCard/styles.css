@@ -3,7 +3,7 @@
   background-color: rgb(255, 255, 255, 0.1);
   border: 1px solid rgba(0, 0, 0, 0.05);
   border-radius: 8px;
-  color: #000;
+  color: #fff;
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
@@ -17,7 +17,7 @@
 }
 
 .album-card:hover {
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(0, 0, 0, 0.1);
   scale: 1.1;
 }
 

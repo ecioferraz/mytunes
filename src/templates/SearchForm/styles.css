@@ -1,18 +1,19 @@
 /* https://codepen.io/yuhomyan/pen/XWdYJdv?editors=1100 */
 .search-form {
-  background: #fff;
-  height: 30px;
-  border-radius: 30px;
-  padding: 10px 20px;
-  display: flex;
-  justify-content: center;
   align-items: center;
-  cursor: pointer;
-  transition: 0.8s;
+  background: #fff;
+  border-radius: 30px;
   box-shadow: 4px 4px 6px 0 rgba(255, 255, 255, 0.3),
     -4px -4px 6px 0 rgba(116, 125, 136, 0.2),
     inset -4px -4px 6px 0 rgba(255, 255, 255, 0.2),
     inset 4px 4px 6px 0 rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  display: flex;
+  height: 30px;
+  justify-content: flex-start;
+  padding: 10px 20px;
+  margin: 5em 0 0.5em;
+  transition: 0.8s;
 }
 
 .search-form .search-input {

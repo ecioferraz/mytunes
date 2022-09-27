@@ -1,5 +1,5 @@
 import React, { FormEvent, useState } from 'react';
-import { TextCard } from '../../components';
+import { Footer, TextCard } from '../../components';
 import { IAlbum } from '../../interfaces';
 import { getAlbums } from '../../services/APIRequests';
 import { AlbumCard, SearchForm } from '../../templates';
@@ -20,32 +20,51 @@ export default function Search() {
   };
 
   return (
-    <main>
-      <SearchForm
-        handleSubmit={handleSubmit}
-        search={search}
-        setSearch={setSearch}
-      />
-      {isLoading ? (
-        <TextCard className='loading' text='Carregando...' />
-      ) : (
-        <div className='album-library'>
-          {/* <TextCard className='' text={`Resultado de busca por: ${search}`}/> */}
-          <div className='album-cards'>
-            {discography.map(
-              ({ artistName, artworkUrl100, collectionId, collectionName }) => (
-                <AlbumCard
-                  key={collectionId}
-                  artistName={artistName}
-                  artworkUrl100={artworkUrl100}
-                  collectionId={collectionId}
-                  collectionName={collectionName}
-                />
-              )
-            )}
+    <>
+      <main className={`search-page ${!discography.length && 'full-screen'}`}>
+        <SearchForm
+          handleSubmit={handleSubmit}
+          search={search}
+          setSearch={setSearch}
+        />
+        {isLoading ? (
+          <TextCard className='loading' text='Carregando...' />
+        ) : (
+          <div className='album-library'>
+            {discography.length ? (
+              <TextCard
+                as='p'
+                className='search-result'
+                text={`Resultado de busca para: ${search}`}
+              />
+            ) : null}
+            <div className='album-cards'>
+              {discography.map(
+                ({
+                  artistName,
+                  artworkUrl100,
+                  collectionId,
+                  collectionName,
+                }) => (
+                  <AlbumCard
+                    key={collectionId}
+                    artistName={artistName}
+                    artworkUrl100={artworkUrl100}
+                    collectionId={collectionId}
+                    collectionName={collectionName}
+                  />
+                )
+              )}
+            </div>
           </div>
-        </div>
-      )}
-    </main>
+        )}
+      </main>
+      <Footer
+        author='lookstudio'
+        className='image-credit'
+        href='https://www.freepik.com/photos/music'
+        tag='Music'
+      />
+    </>
   );
 }
