@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { Button, TextCard, TextInput } from '../../components';
 import { IUserInfo } from '../../interfaces';
 import { readUser, saveUser } from '../../services/localStorage';
+import { USER_INITIAL_STATE } from '../../utils/constants';
 import validateLoginSchema from '../../validations/validateUserSchema';
 
 import './styles.css';
@@ -13,10 +14,7 @@ export default function LoginForm() {
   const [isLoginValid, setIsLoginValid] = useState<boolean>(
     readUser() ? true : false
   );
-  const [loginInfo, setLoginInfo] = useState<IUserInfo>({
-    email: '',
-    password: '',
-  });
+  const [loginInfo, setLoginInfo] = useState<IUserInfo>(USER_INITIAL_STATE);
 
   const handleChange = ({
     target: { name, value },

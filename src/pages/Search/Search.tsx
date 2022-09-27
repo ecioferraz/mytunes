@@ -1,5 +1,5 @@
 import React, { FormEvent, useState } from 'react';
-import { Footer, TextCard } from '../../components';
+import { Footer, Loading, TextCard } from '../../components';
 import { IAlbum } from '../../interfaces';
 import { getAlbums } from '../../services/APIRequests';
 import { AlbumCard, SearchForm } from '../../templates';
@@ -13,6 +13,7 @@ export default function Search() {
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+
     setIsLoading(true);
     const albums = await getAlbums(search);
     setDiscography(albums);
@@ -28,7 +29,7 @@ export default function Search() {
           setSearch={setSearch}
         />
         {isLoading ? (
-          <TextCard className='loading' text='Carregando...' />
+          <Loading />
         ) : (
           <div className='album-library'>
             {discography.length ? (

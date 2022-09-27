@@ -1,22 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { ImageCard, TextCard } from '../../components';
+import { ImageCard, Loading, TextCard } from '../../components';
 import { IAlbum, ITracklist } from '../../interfaces';
 import { getMusics } from '../../services/APIRequests';
+import { ALBUM_INFO_INITIAL_STATE } from '../../utils/constants';
 import shortenName from '../../utils/shortenName';
 import SongCard from '../SongCard';
 
 import './styles.css';
-
-const ALBUM_INFO_INITIAL_STATE = {
-  artistName: '',
-  artworkUrl100: '',
-  collectionId: 0,
-  collectionName: '',
-  artistId: 0,
-  releaseDate: '',
-  trackCount: 0,
-};
 
 export default function TracklistCard() {
   const { id } = useParams();
@@ -28,8 +19,9 @@ export default function TracklistCard() {
   useEffect(() => {
     const getAlbum = async () => {
       setIsLoading(true);
+      
       const album = await getMusics(id as string);
-      console.log(album);
+
       if (album.message) {
         setError(true);
       } else {
@@ -38,6 +30,7 @@ export default function TracklistCard() {
           album.filter((track: ITracklist) => track.kind === 'song')
         );
       }
+
       setIsLoading(false);
     };
 
@@ -47,11 +40,15 @@ export default function TracklistCard() {
   return (
     <>
       {isLoading || error ? (
-        <TextCard
-          as='p'
-          className={isLoading ? 'loading' : 'error-message'}
-          text={isLoading ? 'Carregando...' : 'Oops! Algo deu errado.'}
-        />
+        error ? (
+          <TextCard
+            as='p'
+            className='error-message'
+            text='Oops! Algo deu errado.'
+          />
+        ) : (
+          <Loading />
+        )
       ) : (
         <div className='tracklist'>
           <section className='album-info'>
