@@ -51,5 +51,15 @@
     "eslint": "^8.23.1",
     "eslint-plugin-jest": "^27.0.4",
     "eslint-plugin-react": "^7.31.8"
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "src/**/*.{ts,tsx}"
+    ],
+    "coveragePathIgnorePatterns": [
+      "index.tsx",
+      "reportWebVitals.ts",
+      "./tests/*"
+    ]
   }
 }
