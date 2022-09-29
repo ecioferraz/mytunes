@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/mytunes/static/css/main.1eaa5c82.css",
+    "main.js": "/mytunes/static/js/main.2b50143d.js",
+    "static/js/787.5b239187.chunk.js": "/mytunes/static/js/787.5b239187.chunk.js",
+    "static/media/girl-red-wall-with-headphones.jpg": "/mytunes/static/media/girl-red-wall-with-headphones.c28eeba977dd32f46c32.jpg",
+    "static/media/vecteezy_satisfied-beautiful-african-american-guy-listening-to-music_1486504.jpg": "/mytunes/static/media/vecteezy_satisfied-beautiful-african-american-guy-listening-to-music_1486504.e3620fb1d0f75c752348.jpg",
+    "static/media/cute-girl-white-pink-headphones-actively-dancing-pink-wall-moving-long-hair.jpg": "/mytunes/static/media/cute-girl-white-pink-headphones-actively-dancing-pink-wall-moving-long-hair.b076b1a441b99432880d.jpg",
+    "static/media/young-man-woman-listening-music-headphones.jpg": "/mytunes/static/media/young-man-woman-listening-music-headphones.de93d164755406e286d9.jpg",
+    "static/media/girl-red-wall-with-headphones-SMALLER.jpg": "/mytunes/static/media/girl-red-wall-with-headphones-SMALLER.00ad725a34a7318142c7.jpg",
+    "static/media/cute-girl-white-pink-headphones-actively-dancing-pink-wall-moving-long-hair-SMALLER.jpg": "/mytunes/static/media/cute-girl-white-pink-headphones-actively-dancing-pink-wall-moving-long-hair-SMALLER.853988b2abd6c31aa64c.jpg",
+    "static/media/vecteezy_satisfied-beautiful-african-american-guy-listening-to-music_1486504-SMALLER.jpg": "/mytunes/static/media/vecteezy_satisfied-beautiful-african-american-guy-listening-to-music_1486504-SMALLER.fc258f5cd6943f761631.jpg",
+    "static/media/young-man-woman-listening-music-headphones-SMALLER.jpg": "/mytunes/static/media/young-man-woman-listening-music-headphones-SMALLER.4ea355dfc6fe1f1ba57a.jpg",
+    "index.html": "/mytunes/index.html",
+    "main.1eaa5c82.css.map": "/mytunes/static/css/main.1eaa5c82.css.map",
+    "main.2b50143d.js.map": "/mytunes/static/js/main.2b50143d.js.map",
+    "787.5b239187.chunk.js.map": "/mytunes/static/js/787.5b239187.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.1eaa5c82.css",
+    "static/js/main.2b50143d.js"
+  ]
+}
