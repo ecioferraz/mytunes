@@ -1,0 +1,44 @@
+/* https://codepen.io/yuhomyan/pen/XWdYJdv?editors=1100 */
+.search-form {
+  align-items: center;
+  background: #fff;
+  border-radius: 30px;
+  box-shadow: 4px 4px 6px 0 rgba(255, 255, 255, 0.3),
+    -4px -4px 6px 0 rgba(116, 125, 136, 0.2),
+    inset -4px -4px 6px 0 rgba(255, 255, 255, 0.2),
+    inset 4px 4px 6px 0 rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  display: flex;
+  height: 30px;
+  justify-content: flex-start;
+  padding: 10px 20px;
+  margin: 5em 0 0.5em;
+  transition: 0.8s;
+}
+
+.search-form .search-input {
+  background: transparent;
+  border: none;
+  outline: none;
+  width: 0px;
+  font-weight: 500;
+  font-size: 16px;
+  transition: 1s;
+}
+
+.search-form .search-btn .ai {
+  color: #5cbdbb;
+}
+
+.search-input:focus,
+.search-form:hover .search-input {
+  width: 250px;
+}
+
+.search-btn {
+  background: transparent;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+}

@@ -1,0 +1,95 @@
+.login-form {
+  align-items: center;
+  backdrop-filter: blur(2px);
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 15px;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
+  display: flex;
+  flex-direction: column;
+  height: 35vh;
+  justify-content: space-evenly;
+  -webkit-backdrop-filter: blur(6px);
+  padding: 1em 5em;
+}
+
+.input-container {
+  border: none;
+  display: flex;
+  flex-direction: column;
+}
+
+.input-container input {
+  background: transparent;
+  border: none;
+  border-bottom: solid 1px #efefef;
+  font-size: 14px;
+  margin: .5em 0;
+  outline: none;
+}
+
+.input-container input:focus {
+  border: none;
+  border-bottom: 1px solid rgb(0, 215, 117);
+  outline: none;
+ }
+
+.input-container input::placeholder {
+  color:rgba(0, 0, 0, 0.3);
+  font-size: 10pt;
+}
+
+.login-title {
+  color: #fff;
+}
+
+.error-message {
+  background: rgb(240, 240, 240, 0.8);
+  border-radius: 5px;
+  color: #ff3737;
+  font-size: 0.7em;
+  padding: 0.2em;
+}
+
+.email-input, .password-input {
+  color: #fff;
+}
+
+/* https://getcssscan.com/css-buttons-examples */
+.login-btn {
+  background-color: initial;
+  background-image: linear-gradient(-180deg, rgb(0, 215, 117), rgb(0, 189, 104));
+  border: 0;
+  border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0 2px 4px;
+  color: rgb(255, 255, 255);
+  cursor: pointer;
+  display: inline-block;
+  height: 38px;
+  outline: 0;
+  overflow: hidden;
+  -webkit-user-select: none;
+  padding: 0 20px;
+  pointer-events: auto;
+  position: relative;
+  text-align: center;
+  touch-action: manipulation;
+  user-select: none;
+  vertical-align: top;
+  white-space: nowrap;
+  z-index: 9;
+}
+
+.login-btn:disabled {
+  cursor: default;
+  opacity: .8;
+}
+
+.login-btn:hover:enabled {
+  background: #00bd68;
+}
+
+@media screen and (max-width: 1000px) {
+  .login-form {
+    width: 30vw;
+  }
+}

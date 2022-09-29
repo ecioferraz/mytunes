@@ -1,0 +1,22 @@
+.favorites-page {
+  align-items: center;
+  background: url('../../images/vecteezy_satisfied-beautiful-african-american-guy-listening-to-music_1486504.jpg') no-repeat center center fixed;
+  display: flex;
+  justify-content: flex-end;
+  min-height: 100vh;
+  padding: 0 8em;
+}
+
+@media screen and (max-width: 500px) {
+  .favorites-page {
+    background: url('../../images/vecteezy_satisfied-beautiful-african-american-guy-listening-to-music_1486504-SMALLER.jpg') no-repeat center center fixed;
+    justify-content: center;
+  }
+}
+
+@media screen and (min-height: 1000px) {
+  .favorites-page {
+    background-size: cover;
+  }
+}
+

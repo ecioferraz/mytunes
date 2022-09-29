@@ -1,0 +1,21 @@
+.album-page {
+  align-items: center;
+  background: url('../../images/girl-red-wall-with-headphones.jpg') no-repeat center center fixed;
+  display: flex;
+  justify-content: flex-end;
+  min-height: 100vh;
+  padding: 0 8em;
+}
+
+@media screen and (max-width: 1000px)  {
+  .album-page {
+    background: url('../../images/girl-red-wall-with-headphones-SMALLER.jpg') no-repeat center center fixed;
+    justify-content: center;
+  }
+}
+
+@media screen and (min-height: 1000px) {
+  .album-page {
+    background-size: cover;
+  }
+}

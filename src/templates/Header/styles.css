@@ -1,0 +1,79 @@
+header {
+  align-items: center;
+  backdrop-filter: blur(2px);
+  box-shadow: #858383 0 2px 15px;
+  color: #fff;
+  display: flex;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  justify-content: space-between;
+  -webkit-backdrop-filter: blur(6px);
+  padding: 0 1vw;
+  position: fixed;
+  width: 98%;
+  z-index: 1;
+}
+
+nav {
+  align-items: center;
+  display: flex;
+  justify-items: center;
+}
+
+.mytunes-title {
+  font-family: 'Lobster', cursive;
+  font-size: 20pt;
+  margin: 0;
+}
+
+.search-link,
+.favorites-link {
+  align-items: center;
+  color: #fff;
+  display: flex;
+  font-weight: 500;
+  height: 5vh;
+  padding: 0 20px;
+  text-decoration: none;
+  transition: 0.5s;
+}
+
+.search-link:hover,
+.favorites-link:hover {
+  background-color: rgba(255, 255, 255, 0.4);
+  border-radius: 0 0 1px 1px;
+  box-shadow: #a2a2a2 0 1px 1px;
+  transition: 0.7s;
+}
+
+.logout-btn {
+  background: none;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  font-size: 1em;
+  font-weight: 600;
+}
+
+@media screen and (max-width: 1280px) {
+  .search-link,
+  .favorites-link {
+    height: 7vh;
+  }
+}
+
+@media screen and (min-width: 410px) and (max-width: 915px) {
+  .search-link,
+  .favorites-link {
+    font-size: 1.2rem;
+  }
+}
+
+@media screen and (min-height: 800px) {
+  .search-link,
+  .favorites-link {
+    height: 4vh;
+    font-size: 1.1rem;
+  }
+}
