@@ -8,16 +8,16 @@ export const emptyFavsMock = {
   },
 };
 
+export const songMock = {
+  artistName: 'artist',
+  kind: 'song',
+  previewUrl: 'previewUrl',
+  trackId: 0,
+  trackName: 'trackName'
+};
+
 export const filledFavsMock = {
-  favorites: [
-    {
-      artistName: 'artist',
-      kind: 'song',
-      previewUrl: 'previewUrl',
-      trackId: 0,
-      trackName: 'trackName'
-    },
-  ],
+  favorites: [songMock],
   removeFavorite: () => {
     return;
   },
