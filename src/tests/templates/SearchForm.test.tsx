@@ -1,7 +1,6 @@
 import React from 'react';
 import { createRoot, Root } from 'react-dom/client';
 import { act } from 'react-dom/test-utils';
-import { BrowserRouter } from 'react-router-dom';
 import { SearchForm } from '../../templates';
 
 const SEARCH_FORM = 'form[class="search-form"]';
@@ -26,17 +25,15 @@ describe('Templates', () => {
     beforeEach(() => {
       act(() => {
         root?.render(
-          <BrowserRouter>
-            <SearchForm
-              handleSubmit={() => {
-                return;
-              }}
-              search='test value'
-              setSearch={() => {
-                return;
-              }}
-            />
-          </BrowserRouter>
+          <SearchForm
+            handleSubmit={() => {
+              return;
+            }}
+            search='test value'
+            setSearch={() => {
+              return;
+            }}
+          />
         );
       });
 
