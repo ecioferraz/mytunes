@@ -42,6 +42,14 @@
   color: #fff;
 }
 
+.error-message {
+  background: rgb(240, 240, 240, 0.8);
+  border-radius: 5px;
+  color: #ff3737;
+  font-size: 0.7em;
+  padding: 0.2em;
+}
+
 .email-input, .password-input {
   color: #fff;
 }
