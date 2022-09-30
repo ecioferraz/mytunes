@@ -20,10 +20,10 @@ export default function Header() {
         <header>
           <TextCard as='h1' className='mytunes-title' text='myTunes' />
           <nav>
-            <HeaderLink className='search-link' name='Search' path='search' />
+            <HeaderLink className='search-link' name='Buscar' path='search' />
             <HeaderLink
               className='favorites-link'
-              name='Favorites'
+              name='Favoritas'
               path='favorites'
             />
           </nav>
