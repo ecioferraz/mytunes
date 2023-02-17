@@ -1,9 +1,9 @@
-import { ITracklist } from '../interfaces';
+import { Tracklist } from '../types';
 
 type FavoritesContextType = {
-  favorites: ITracklist[];
-  saveFavorite: (song: ITracklist) => void;
-  removeFavorite: (song: ITracklist) => void;
+  favorites: Tracklist[];
+  saveFavorite: (song: Tracklist) => void;
+  removeFavorite: (song: Tracklist) => void;
 };
 
 export default FavoritesContextType;

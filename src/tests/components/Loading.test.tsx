@@ -1,4 +1,3 @@
-import React from 'react';
 import { createRoot, Root } from 'react-dom/client';
 import { act } from 'react-dom/test-utils';
 import { Loading } from '../../components';
@@ -34,7 +33,7 @@ describe('Components', () => {
       expect(loading).toBeTruthy();
     });
 
-    it('should render Loading\'s properties correctly', () => {
+    it("should render Loading's properties correctly", () => {
       expect(loading?.className).toBe('loading');
       expect(loading?.children.length).toBe(1);
       expect(loading?.children[0].className).toBe('lds-roller');

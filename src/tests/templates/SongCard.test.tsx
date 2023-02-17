@@ -1,5 +1,4 @@
 import { fireEvent } from '@testing-library/react';
-import React from 'react';
 import { createRoot, Root } from 'react-dom/client';
 import { act } from 'react-dom/test-utils';
 import { BrowserRouter } from 'react-router-dom';
@@ -33,7 +32,7 @@ describe('Templates', () => {
             <FavoritesContext.Provider value={emptyFavsMock}>
               <SongCard song={songMock} />
             </FavoritesContext.Provider>
-          </BrowserRouter>
+          </BrowserRouter>,
         );
       });
 

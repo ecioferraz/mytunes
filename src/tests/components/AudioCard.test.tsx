@@ -1,4 +1,3 @@
-import React from 'react';
 import { createRoot, Root } from 'react-dom/client';
 import { act } from 'react-dom/test-utils';
 import { AudioCard } from '../../components';
@@ -20,7 +19,7 @@ describe('Components', () => {
 
     beforeEach(() => {
       act(() => {
-        root?.render(<AudioCard previewUrl='test previewUrl' />);
+        root?.render(<AudioCard previewUrl="test previewUrl" />);
       });
 
       audioCard = container?.querySelector('audio');
@@ -34,7 +33,7 @@ describe('Components', () => {
       expect(audioCard).toBeTruthy();
     });
 
-    it('should render audioCard\'s properties correctly', () => {
+    it("should render audioCard's properties correctly", () => {
       expect(audioCard?.className).toBe('audio-player');
       expect(audioCard).toHaveAttribute('controls');
       expect(audioCard?.getAttribute('src')).toBe('test previewUrl');

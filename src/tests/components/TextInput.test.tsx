@@ -1,4 +1,3 @@
-import React from 'react';
 import { createRoot, Root } from 'react-dom/client';
 import { act, Simulate } from 'react-dom/test-utils';
 import { TextInput } from '../../components';
@@ -25,13 +24,13 @@ describe('Components', () => {
         act(() => {
           root?.render(
             <TextInput
-              className='test className'
+              className="test className"
               handleChange={onChange}
-              name='test name'
-              placeholder='test placeholder'
-              type='text'
-              value='test value'
-            />
+              name="test name"
+              placeholder="test placeholder"
+              type="text"
+              value="test value"
+            />,
           );
         });
 

@@ -1,4 +1,3 @@
-import React from 'react';
 import { createRoot, Root } from 'react-dom/client';
 import { act } from 'react-dom/test-utils';
 import { Footer } from '../../components';
@@ -23,10 +22,10 @@ describe('Components', () => {
         act(() => {
           root?.render(
             <Footer
-              author='test author'
-              href='test freepik source'
-              tag='test tag'
-            />
+              author="test author"
+              href="test freepik source"
+              tag="test tag"
+            />,
           );
         });
 
@@ -41,14 +40,14 @@ describe('Components', () => {
         expect(footer).toBeTruthy();
       });
 
-      it('should render footer\'s properties correctly', () => {
+      it("should render footer's properties correctly", () => {
         expect(footer?.tagName).toBe('FOOTER');
         expect(footer?.children.length).toBe(1);
         expect(footer?.children[0].getAttribute('href')).toBe(
-          'test freepik source'
+          'test freepik source',
         );
         expect(footer?.children[0].innerHTML).toBe(
-          'test tag photo created by test author - www.freepik.com'
+          'test tag photo created by test author - www.freepik.com',
         );
       });
     });
@@ -57,11 +56,7 @@ describe('Components', () => {
       beforeEach(() => {
         act(() => {
           root?.render(
-            <Footer
-              author='test author'
-              href='test source'
-              tag='test tag'
-            />
+            <Footer author="test author" href="test source" tag="test tag" />,
           );
         });
 
@@ -76,12 +71,12 @@ describe('Components', () => {
         expect(footer).toBeTruthy();
       });
 
-      it('should render footer\'s properties correctly', () => {
+      it("should render footer's properties correctly", () => {
         expect(footer?.tagName).toBe('FOOTER');
         expect(footer?.children.length).toBe(1);
         expect(footer?.children[0].getAttribute('href')).toBe('test source');
         expect(footer?.children[0].innerHTML).toBe(
-          'test tag photos by test author'
+          'test tag photos by test author',
         );
       });
     });

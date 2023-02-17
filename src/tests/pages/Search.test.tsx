@@ -1,4 +1,3 @@
-import React from 'react';
 import { createRoot, Root } from 'react-dom/client';
 import { act } from 'react-dom/test-utils';
 import { BrowserRouter } from 'react-router-dom';
@@ -26,7 +25,7 @@ describe('Pages', () => {
         root?.render(
           <BrowserRouter>
             <Search />
-          </BrowserRouter>
+          </BrowserRouter>,
         );
       });
 

@@ -1,4 +1,3 @@
-import React from 'react';
 import { createRoot, Root } from 'react-dom/client';
 import { act } from 'react-dom/test-utils';
 import { Button } from '../../components';
@@ -25,44 +24,44 @@ describe('Components', () => {
         act(() =>
           root?.render(
             <Button
-              className='test className'
+              className="test className"
               handleClick={onClick}
-              name='test name'
-              type='button'
-            />
-          )
+              name="test name"
+              type="button"
+            />,
+          ),
         );
-  
+
         button = container?.querySelector('button');
       });
-  
+
       afterEach(() => (button = null));
-  
+
       it('should render a button', () => {
         expect(button).toBeTruthy();
       });
-  
-      it('should render button\'s properties correctly', () => {
+
+      it("should render button's properties correctly", () => {
         expect(button?.getAttribute('class')).toBe('test className');
         expect(button?.getAttribute('name')).toBe('test name');
         expect(button?.getAttribute('type')).toBe('button');
       });
-  
+
       it('should render a clickable button', () => {
         expect(button).not.toBeDisabled();
-  
+
         act(() => button?.click());
-  
+
         expect(onClick).toHaveBeenCalled();
       });
-  
+
       it('should render a disabled and unclickable button', () => {
         expect(button).not.toBeDisabled();
         button && (button.disabled = true);
         expect(button).toBeDisabled();
-  
+
         act(() => button?.click());
-  
+
         expect(onClick).not.toHaveBeenCalled();
       });
     });
@@ -72,24 +71,23 @@ describe('Components', () => {
         act(() =>
           root?.render(
             <Button
-              className='test className'
+              className="test className"
               handleClick={onClick}
-              name='unfav'
-              type='button'
-            />
-          )
+              name="unfav"
+              type="button"
+            />,
+          ),
         );
-    
+
         button = container?.querySelector('button');
       });
-    
+
       afterEach(() => (button = null));
-    
-      it('should render a unfavorited Icon as a button\'s inner content',
-        () => {
-          expect(button?.children[0]).not.toHaveAttribute('color');
-          expect(button?.children[0].getAttribute('name')).toBe('unfav');
-        });
+
+      it("should render a unfavorited Icon as a button's inner content", () => {
+        expect(button?.children[0]).not.toHaveAttribute('color');
+        expect(button?.children[0].getAttribute('name')).toBe('unfav');
+      });
     });
 
     describe('as favorited IconType button', () => {
@@ -97,24 +95,23 @@ describe('Components', () => {
         act(() =>
           root?.render(
             <Button
-              className='test className'
+              className="test className"
               handleClick={onClick}
-              name='fav'
-              type='button'
-            />
-          )
+              name="fav"
+              type="button"
+            />,
+          ),
         );
-    
+
         button = container?.querySelector('button');
       });
-    
+
       afterEach(() => (button = null));
-    
-      it('should render a unfavorited Icon as a button\'s inner content',
-        () => {
-          expect(button?.children[0]).toHaveAttribute('color');
-          expect(button?.children[0].getAttribute('name')).toBe('fav');
-        });
+
+      it("should render a unfavorited Icon as a button's inner content", () => {
+        expect(button?.children[0]).toHaveAttribute('color');
+        expect(button?.children[0].getAttribute('name')).toBe('fav');
+      });
     });
 
     describe('as search IconType button', () => {
@@ -122,20 +119,20 @@ describe('Components', () => {
         act(() =>
           root?.render(
             <Button
-              className='test className'
+              className="test className"
               handleClick={onClick}
-              name='search'
-              type='submit'
-            />
-          )
+              name="search"
+              type="submit"
+            />,
+          ),
         );
-    
+
         button = container?.querySelector('button');
       });
-    
+
       afterEach(() => (button = null));
-    
-      it('should render a search Icon as a button\'s inner content', () => {
+
+      it("should render a search Icon as a button's inner content", () => {
         expect(button?.children[0].getAttribute('name')).toBe('search');
       });
     });

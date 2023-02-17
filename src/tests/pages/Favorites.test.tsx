@@ -1,4 +1,3 @@
-import React from 'react';
 import { createRoot, Root } from 'react-dom/client';
 import { act } from 'react-dom/test-utils';
 import { BrowserRouter } from 'react-router-dom';
@@ -30,7 +29,7 @@ describe('Pages', () => {
             <FavoritesContext.Provider value={emptyFavsMock}>
               <Favorites />
             </FavoritesContext.Provider>
-          </BrowserRouter>
+          </BrowserRouter>,
         );
       });
 

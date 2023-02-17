@@ -1,4 +1,3 @@
-import React from 'react';
 import { createRoot, Root } from 'react-dom/client';
 import { act } from 'react-dom/test-utils';
 import { BrowserRouter } from 'react-router-dom';
@@ -29,12 +28,12 @@ describe('Templates', () => {
         root?.render(
           <BrowserRouter>
             <AlbumCard
-              artistName='test artistName'
-              artworkUrl100='test artworkUrl100'
+              artistName="test artistName"
+              artworkUrl100="test artworkUrl100"
               collectionId={0}
-              collectionName='test collectionName'
+              collectionName="test collectionName"
             />
-          </BrowserRouter>
+          </BrowserRouter>,
         );
       });
 
@@ -53,12 +52,12 @@ describe('Templates', () => {
       expect(albumImage).toBeTruthy();
       expect(albumImage).toBeInstanceOf(HTMLImageElement);
       expect(albumImage?.getAttribute('alt')).toBe(
-        'Capa do álbum test collectionName.'
+        'Capa do álbum test collectionName.',
       );
       expect(albumImage?.getAttribute('src')).toBe('test artworkUrl100');
     });
 
-    it('should render a <TextCard /> for the album\'s title', () => {
+    it("should render a <TextCard /> for the album's title", () => {
       const albumTitle = albumCard?.querySelector(ALBUM_TITLE);
 
       expect(albumTitle).toBeTruthy();
@@ -66,7 +65,7 @@ describe('Templates', () => {
       expect(albumTitle?.innerHTML).toBe('test collectionName');
     });
 
-    it('should render a <TextCard /> for the artist\'s name', () => {
+    it("should render a <TextCard /> for the artist's name", () => {
       const artistName = albumCard?.querySelector(ARTIST_NAME);
 
       expect(artistName).toBeTruthy();
