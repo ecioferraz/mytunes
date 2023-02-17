@@ -1,4 +1,3 @@
-import React from 'react';
 import { createRoot, Root } from 'react-dom/client';
 import { act } from 'react-dom/test-utils';
 import { BrowserRouter } from 'react-router-dom';
@@ -23,8 +22,8 @@ describe('Components', () => {
       act(() => {
         root?.render(
           <BrowserRouter>
-            <HeaderLink className='test className' name='test name' />
-          </BrowserRouter>
+            <HeaderLink className="test className" name="test name" />
+          </BrowserRouter>,
         );
       });
 
@@ -35,12 +34,12 @@ describe('Components', () => {
       expect(headerLink).toBeTruthy();
     });
 
-    it('should render HeaderLink\'s properties correctly', () => {
+    it("should render HeaderLink's properties correctly", () => {
       expect(headerLink?.getAttribute('class')).toBe('test className');
       expect(headerLink?.getAttribute('href')).toBe('/');
     });
 
-    it('should render HeaderLink\'s inner text correctly', () => {
+    it("should render HeaderLink's inner text correctly", () => {
       expect(headerLink?.textContent).toBe('test name');
     });
   });

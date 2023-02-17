@@ -1,4 +1,3 @@
-import React from 'react';
 import { createRoot, Root } from 'react-dom/client';
 import { act } from 'react-dom/test-utils';
 import { TextCard } from '../../components';
@@ -27,7 +26,7 @@ describe('Components', () => {
       beforeEach(() => {
         act(() => {
           root?.render(
-            <TextCard as='h1' className='test className' text='test text' />
+            <TextCard as="h1" className="test className" text="test text" />,
           );
         });
 
@@ -42,7 +41,7 @@ describe('Components', () => {
         expect(textCard).toBeTruthy();
       });
 
-      it('should render h1\'s properties correctly', () => {
+      it("should render h1's properties correctly", () => {
         expect(textCard?.className).toBe('test className');
         expect(textCard?.tagName).toBe('H1');
         expect(textCard?.textContent).toBe('test text');
@@ -57,7 +56,7 @@ describe('Components', () => {
               as: 'p',
               className: 'test className',
               text: 'test text',
-            })
+            }),
           );
         });
 
@@ -72,7 +71,7 @@ describe('Components', () => {
         expect(textCard).toBeTruthy();
       });
 
-      it('should render paragraph\'s properties correctly', () => {
+      it("should render paragraph's properties correctly", () => {
         expect(textCard?.className).toBe('test className');
         expect(textCard?.tagName).toBe('P');
         expect(textCard?.textContent).toBe('test text');
@@ -86,7 +85,7 @@ describe('Components', () => {
             TextCard({
               className: 'test className',
               text: 'test text',
-            })
+            }),
           );
         });
 
@@ -101,7 +100,7 @@ describe('Components', () => {
         expect(textCard).toBeTruthy();
       });
 
-      it('should render a span\'s properties correctly', () => {
+      it("should render a span's properties correctly", () => {
         expect(textCard?.className).toBe('test className');
         expect(textCard?.tagName).toBe('SPAN');
         expect(textCard?.textContent).toBe('test text');

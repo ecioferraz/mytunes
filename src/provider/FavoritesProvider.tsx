@@ -1,17 +1,17 @@
-import React, { PropsWithChildren, useEffect, useState } from 'react';
+import { PropsWithChildren, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import FavoritesContext from '../context/FavoritesContext';
-import { ITracklist } from '../interfaces';
 import {
   addFavoriteSong,
   readFavoriteSongs,
   readUser,
   removeFavoriteSong,
 } from '../services/localStorage';
+import { Tracklist } from '../types';
 
 export default function FavoritesProvider({ children }: PropsWithChildren) {
   const navigate = useNavigate();
-  const [favorites, setFavorites] = useState<ITracklist[]>([]);
+  const [favorites, setFavorites] = useState<Tracklist[]>([]);
 
   useEffect(() => {
     if (!readUser()) navigate('/login');
@@ -21,12 +21,12 @@ export default function FavoritesProvider({ children }: PropsWithChildren) {
     setFavorites(readFavoriteSongs());
   }, []);
 
-  const saveFavorite = (song: ITracklist) => {
+  const saveFavorite = (song: Tracklist) => {
     addFavoriteSong(song);
     setFavorites([...favorites, song]);
   };
 
-  const removeFavorite = (song: ITracklist) => {
+  const removeFavorite = (song: Tracklist) => {
     removeFavoriteSong(song);
     setFavorites(favorites.filter((fav) => fav.trackId !== song.trackId));
   };

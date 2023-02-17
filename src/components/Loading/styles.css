@@ -144,7 +144,6 @@
   width: 11.2px;
   z-index: 1;
   border-radius: 50%;
-  /*animation-direction: alternate;*/
 }
 
 .rhombus2 .circle22 {
@@ -156,7 +155,6 @@
   z-index: 1;
   margin-left: 8.3px;
   border-radius: 50%;
-  /*animation-direction: alternate;*/
 }
 
 @keyframes pump {

@@ -1,4 +1,3 @@
-import React from 'react';
 import { createRoot, Root } from 'react-dom/client';
 import { act } from 'react-dom/test-utils';
 import { SearchForm } from '../../templates';
@@ -29,11 +28,11 @@ describe('Templates', () => {
             handleSubmit={() => {
               return;
             }}
-            search='test value'
+            search="test value"
             setSearch={() => {
               return;
             }}
-          />
+          />,
         );
       });
 
@@ -51,7 +50,7 @@ describe('Templates', () => {
       expect(searchInput).toBeTruthy();
       expect(searchInput).toBeInstanceOf(HTMLInputElement);
       expect(searchInput?.getAttribute('placeholder')).toBe(
-        'Pesquise um artista ou banda...'
+        'Pesquise um artista ou banda...',
       );
       expect(searchInput?.getAttribute('type')).toBe('search');
       expect(searchInput?.getAttribute('value')).toBe('test value');

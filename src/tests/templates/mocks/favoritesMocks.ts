@@ -13,7 +13,7 @@ export const songMock = {
   kind: 'song',
   previewUrl: 'previewUrl',
   trackId: 0,
-  trackName: 'trackName'
+  trackName: 'trackName',
 };
 
 export const filledFavsMock = {

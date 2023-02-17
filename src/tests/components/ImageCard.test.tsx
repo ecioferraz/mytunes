@@ -1,4 +1,3 @@
-import React from 'react';
 import { createRoot, Root } from 'react-dom/client';
 import { act } from 'react-dom/test-utils';
 import { ImageCard } from '../../components';
@@ -22,10 +21,10 @@ describe('Components', () => {
       act(() => {
         root?.render(
           <ImageCard
-            alt='test alt'
-            className='test className'
-            imageURL='test imageURL'
-          />
+            alt="test alt"
+            className="test className"
+            imageURL="test imageURL"
+          />,
         );
       });
 
@@ -40,7 +39,7 @@ describe('Components', () => {
       expect(imageCard).toBeTruthy();
     });
 
-    it('should render ImageCard\'s properties correctly', () => {
+    it("should render ImageCard's properties correctly", () => {
       expect(imageCard?.className).toBe('image-card');
       expect(imageCard?.tagName).toBe('DIV');
       expect(imageCard?.children[0].tagName).toBe('IMG');
