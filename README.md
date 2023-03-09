@@ -1,7 +1,7 @@
 
 # myTunes
 
-myTunes é originalmente um [projeto acadêmico](https://ecioferraz.github.io/trybe-trybetunes-project/) desenvolvido durante o curso de Desenvolvimento Web da Trybe, que refiz e adaptei utilizando os conhecimentos que adquiri após aquele momento do curso.
+myTunes é originalmente um [projeto acadêmico](https://ecioferraz.github.io/trybe-trybetunes-project/), desenvolvido durante o curso de Desenvolvimento Web da Trybe, que refiz e adaptei utilizando os conhecimentos que adquiri após aquele momento do curso.
 
 Trata-se de uma aplicação onde é possível pesquisar por artistas ou bandas e obter seus álbuns, ouvir pequenos trechos de música, e favoritá-las. A aplicação é alimentada por uma [API](https://developer.apple.com/library/archive/documentation/AudioVideo/Conceptual/iTuneSearchAPI/index.html) externa. 
 
